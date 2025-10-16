@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    // Part 1: 星星金字塔
+    for (int i = 1; i <= 6; ++i) {
+        for (int j = 1; j <= i; ++j) {
+            cout << "*";
+        }
+        cout << endl;
+    }
+
+    cout << endl; // 加一個空行分隔
+
+    // Part 2: 九九乘法表
+    int i = 1;
+    while (i <= 9) {
+        int j = 1;
+        while (j <= 9) {
+            cout << i << " * " << j << " = " << i * j << "\t";
+            j += 1;
+        }
+        cout << endl;
+        i += 1;
+    }
+
+    return 0;
+}
