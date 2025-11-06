@@ -1,18 +1,39 @@
+#include <iostream>
+using namespace std;
 
 int main() {
-   
-    int score1, score2, score3;
-    cout << "請輸入3次分數(0~100): ";
-    cin >> score1 >> score2 >> score3;
-    double averageScore = (score1 + score2 + score3)/3;
-    if (score1 < 40 || score2 < 40 || score3 < 40) {
-        cout << "不及格\n";
-    } else if (averageScore >= 60) {
-        cout << "你及格\n";
-    } else if (averageScore < 60) {
-        cout << "不及格\n";
+    int stack[5];  // 宣告堆疊空間
+    int top = -1;  // 記錄堆疊頂端位置
+
+    // 推入三個元素
+    top++;
+    stack[top] = 10;
+    top++;
+    stack[top] = 20;
+    top++;
+    stack[top] = 30;
+
+    // 輸出目前堆疊內容
+    cout << "目前堆疊內容: " << endl;
+    for (int i = 0; i <= top; i++) {
+        cout << stack[i] << " ";
     }
-    cout << "你的平均為: \a" << averageScore;
+    cout << endl << endl;
+
+    // 彈出一個元素
+    if (top >= 0) {
+        cout << "彈出元素: " << stack[top] << endl;
+        top--;
+    } else {
+        cout << "堆疊是空的，不能彈出!" << endl;
+    }
+
+    // 再次輸出堆疊內容
+    cout << "彈出後堆疊內容: " << endl;
+    for (int i = 0; i <= top; i++) {
+        cout << stack[i] << " ";
+    }
+    cout << endl;
 
     return 0;
 }
